@@ -80,13 +80,23 @@ export const ForecastProvider = ({ children }) => {
   const addToLastSearched = (location) => {
     if (last_searched.length === 3) {
       const new_last_searched = [...last_searched];
-      new_last_searched.pop();
-      new_last_searched.splice(0, 0, location);
-      setLastSearched(new_last_searched);
+
+      if (new_last_searched.findIndex(location) === -1) {
+        new_last_searched.pop();
+        new_last_searched.splice(0, 0, location);
+        setLastSearched(new_last_searched);
+      }
     } else {
       const new_last_searched = [...last_searched];
-      new_last_searched.splice(0, 0, location);
-      setLastSearched(new_last_searched);
+
+      if (
+        (new_last_searched.length !== 0 &&
+          !new_last_searched.includes(location)) ||
+        new_last_searched.length === 0
+      ) {
+        new_last_searched.splice(0, 0, location);
+        setLastSearched(new_last_searched);
+      }
     }
   };
 

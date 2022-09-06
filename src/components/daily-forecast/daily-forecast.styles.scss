@@ -1,0 +1,7 @@
+.daily-forecast {
+  display: grid;
+  // grid-gap: 30px;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, 140px);
+  margin: 75px 90px 72px 90px;
+}

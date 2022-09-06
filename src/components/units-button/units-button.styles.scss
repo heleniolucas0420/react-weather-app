@@ -1,0 +1,22 @@
+.units-button {
+  width: 45px;
+  height: 45px;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #585676;
+  border-radius: 50px;
+  color: #e7e7eb;
+
+  &:last-child {
+    margin-left: 9px;
+  }
+}
+
+.active {
+  background: #E7E7EB;
+  color: #110E3C;
+}
