@@ -1,0 +1,32 @@
+.hightlight-card-container {
+  width: 392px;
+  height: fit-content;
+  min-height: 165px;;
+  background: #1e213a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  color: #e7e7eb;
+  // padding: 23px 0;
+
+  .hightlight-card-title {
+    margin-top: 23px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .hightlight {
+    font-size: 64px;
+    line-height: 75px;
+    
+    .hightlight-unit {
+      font-size: 32px;
+    }
+
+    
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+}

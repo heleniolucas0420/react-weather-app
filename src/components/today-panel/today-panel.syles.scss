@@ -1,0 +1,100 @@
+.today-panel-container {
+  width: 100%;
+  height: 100%;
+  background-color: #1e213a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+
+  .location-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 30px;
+    padding: 0 40px;
+
+    .search-for-places {
+      background: #6e707a;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #e7e7eb;
+    }
+
+    .get-current-location {
+      width: 40px;
+      height: 40px;
+      background: #6e707a;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: #e7e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+    }
+  }
+
+  .current-weather-image {
+    width: 200px;
+    height: 230px;
+    border: 1px solid black;
+    align-self: center;
+    margin-top: 60px;
+  }
+
+  .current-temperature {
+    // font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 110px;
+    line-height: 169px;
+    color: #e7e7eb;
+
+    span {
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 42px;
+      text-align: center;
+      color: #a09fb1;
+      font-weight: 100;
+    }
+  }
+
+  .current-temperature-description {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 42px;
+    text-align: center;
+    color: #a09fb1;
+  }
+
+  .current-date {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #88869d;
+  }
+
+  .current-location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #88869d;
+    margin-bottom: 40px;
+
+    .location-icon {
+      margin-right: 9px;
+    }
+
+    .material-icons {
+      margin-right: 9px;
+    }
+  }
+}

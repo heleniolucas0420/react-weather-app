@@ -6,24 +6,24 @@ const getUnits = (units) => {
       return {
         temp: 'ºC',
         wind_status: 'kmph',
-        visibility: 'km'
+        visibility: 'km',
       };
 
     case 'imperial':
       return {
         temp: 'ºF',
         wind_status: 'mph',
-        visibility: 'miles'
-      };  
+        visibility: 'miles',
+      };
 
     default:
       return {
         temp: 'ºK',
         wind_status: 'kmph',
-        visibility: 'km'
+        visibility: 'km',
       };
   }
-}
+};
 
 export const ForecastContext = createContext({
   forecast: null,
@@ -32,13 +32,18 @@ export const ForecastContext = createContext({
   setNewLocation: () => {},
   units: null,
   setNewUnits: () => {},
-  unit: 'metric'
+  unit: 'metric',
+  last_searched: [],
+  is_search_hidden: true,
+  toggleIsSearchHidden: () => {},
 });
 
 export const ForecastProvider = ({ children }) => {
   const [forecast, setForecast] = useState(null);
   const [location, setLocation] = useState(null);
   const [units, setUnits] = useState(null);
+  const [last_searched, setLastSearched] = useState([]);
+  const [is_search_hidden, setIsSearchHidden] = useState(true);
   const [unit, setUnit] = useState('metric');
 
   const updateForecast = async (new_location, unit) => {
@@ -65,10 +70,52 @@ export const ForecastProvider = ({ children }) => {
   };
 
   const setNewUnits = (new_units) => {
-    updateForecast(location, new_units)
-  }
+    updateForecast(location, new_units);
+  };
 
-  const value = { forecast, location, units, setNewLocation, setNewUnits, unit };
+  const toggleIsSearchHidden = () => {
+    setIsSearchHidden(!is_search_hidden);
+  };
 
-  return <ForecastContext.Provider value={value}>{children}</ForecastContext.Provider>;
+  const addToLastSearched = (location) => {
+    if (last_searched.length === 3) {
+      const new_last_searched = [...last_searched];
+
+      if (new_last_searched.findIndex(location) === -1) {
+        new_last_searched.pop();
+        new_last_searched.splice(0, 0, location);
+        setLastSearched(new_last_searched);
+      }
+    } else {
+      const new_last_searched = [...last_searched];
+
+      if (
+        (new_last_searched.length !== 0 &&
+          !new_last_searched.includes(location)) ||
+        new_last_searched.length === 0
+      ) {
+        new_last_searched.splice(0, 0, location);
+        setLastSearched(new_last_searched);
+      }
+    }
+  };
+
+  const value = {
+    forecast,
+    location,
+    units,
+    setNewLocation,
+    setNewUnits,
+    unit,
+    last_searched,
+    addToLastSearched,
+    is_search_hidden,
+    toggleIsSearchHidden,
+  };
+
+  return (
+    <ForecastContext.Provider value={value}>
+      {children}
+    </ForecastContext.Provider>
+  );
 };
