@@ -16,3 +16,16 @@ export const getWindDirection = (wind_deg) => {
   else if (wind_deg > 303.75 && wind_deg < 326.25) return 'NW';
   else if (wind_deg > 326.25 && wind_deg < 348.75) return 'NNW';
 };
+
+export const getWeatherImage = (weather_id) => {
+  if (weather_id > 200 && weather_id < 300) return '/src/assets/Thunderstorm.png';
+  else if (weather_id >= 300 && weather_id < 500) return '/src/assets/LightRain.png';
+  else if (weather_id >= 500 && weather_id < 511) return '/src/assets/Shower.png';
+  else if (weather_id === 511) return '/src/assets/Sleet.png';
+  else if (weather_id > 511 && weather_id < 600) return '/src/assets/LightRain.png';
+  else if (weather_id >= 600 && weather_id < 700) return '/src/assets/Snow.png';
+  else if (weather_id >= 700 && weather_id < 800) return '/src/assets/Hail.png';
+  else if (weather_id === 800) return '/src/assets/Clear.png';
+  else if (weather_id === 801) return '/src/assets/LightCloud.png';
+  else if (weather_id > 801 && weather_id < 899) return '/src/assets/HeavyCloud.png';
+}
