@@ -59,7 +59,7 @@ const DetailPanel = () => {
         </div>
       </div>
       <div className='footer'>
-        <span>created by Helenio Lucas - devChallenges.io</span>
+        <span>created by <a href='https://github.com/heleniolucas0420' target='_blank'>Helenio Lucas</a> - devChallenges.io</span>
       </div>
     </div>
   );
