@@ -9,6 +9,7 @@ import {
   getCurrentPosition,
   getLocationName,
 } from '../../utils/location.utils';
+import { getWeatherImage } from '../../utils/forecast.utils';
 
 import './today-panel.syles.scss';
 
@@ -77,7 +78,7 @@ const TodayPanel = ({ location_name, setLocationName }) => {
           </div>
           <img
             className='current-weather-image'
-            src=''
+            src={getWeatherImage(forecast.current.weather[0].id)}
             alt='current-weather-image'
           />
           <span className='current-temperature'>

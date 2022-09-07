@@ -37,11 +37,12 @@
   }
 
   .current-weather-image {
-    width: 200px;
-    height: 230px;
-    border: 1px solid black;
+    width: 205px;
+    height: 205px;
+    // border: 1px solid black;
     align-self: center;
-    margin-top: 60px;
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 
   .current-temperature {
@@ -87,7 +88,7 @@
     font-size: 14px;
     line-height: 21px;
     color: #88869d;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 
     .location-icon {
       margin-right: 9px;
