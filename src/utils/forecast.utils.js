@@ -18,14 +18,14 @@ export const getWindDirection = (wind_deg) => {
 };
 
 export const getWeatherImage = (weather_id) => {
-  if (weather_id > 200 && weather_id < 300) return '/src/assets/Thunderstorm.png';
-  else if (weather_id >= 300 && weather_id < 500) return '/src/assets/LightRain.png';
-  else if (weather_id >= 500 && weather_id < 511) return '/src/assets/Shower.png';
-  else if (weather_id === 511) return '/src/assets/Sleet.png';
-  else if (weather_id > 511 && weather_id < 600) return '/src/assets/LightRain.png';
-  else if (weather_id >= 600 && weather_id < 700) return '/src/assets/Snow.png';
-  else if (weather_id >= 700 && weather_id < 800) return '/src/assets/Hail.png';
-  else if (weather_id === 800) return '/src/assets/Clear.png';
-  else if (weather_id === 801) return '/src/assets/LightCloud.png';
-  else if (weather_id > 801 && weather_id < 899) return '/src/assets/HeavyCloud.png';
+  if (weather_id > 200 && weather_id < 300) return '/assets/Thunderstorm.png';
+  else if (weather_id >= 300 && weather_id < 500) return '/assets/LightRain.png';
+  else if (weather_id >= 500 && weather_id < 511) return '/assets/Shower.png';
+  else if (weather_id === 511) return '/assets/Sleet.png';
+  else if (weather_id > 511 && weather_id < 600) return '/assets/LightRain.png';
+  else if (weather_id >= 600 && weather_id < 700) return '/assets/Snow.png';
+  else if (weather_id >= 700 && weather_id < 800) return '/assets/Hail.png';
+  else if (weather_id === 800) return '/assets/Clear.png';
+  else if (weather_id === 801) return '/assets/LightCloud.png';
+  else if (weather_id > 801 && weather_id < 899) return '/assets/HeavyCloud.png';
 }
