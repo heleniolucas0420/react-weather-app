@@ -1,7 +1,7 @@
 .hightlight-card-container {
   width: 392px;
+  min-height: 165px;
   height: fit-content;
-  min-height: 165px;;
   background: #1e213a;
   display: flex;
   flex-direction: column;
@@ -19,14 +19,20 @@
   .hightlight {
     font-size: 64px;
     line-height: 75px;
-    
+    font-weight: 900;
+    margin: 10px 0;
+
     .hightlight-unit {
       font-size: 32px;
+      font-weight: normal;
     }
 
-    
     &:last-child {
       margin-bottom: 20px;
     }
+  }
+
+  .hightlight-children {
+    margin: 0 auto 23px auto;
   }
 }
