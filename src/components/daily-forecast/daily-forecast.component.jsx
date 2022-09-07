@@ -14,7 +14,7 @@ const DailyForecast = () => {
       {forecast.daily
         .filter((day, index) => index < 6 && index !== 0)
         .map((day, index) => (
-          <WeatherCard valid_day={day} index={index} units={units}/>
+          <WeatherCard key={index} valid_day={day} index={index} units={units}/>
         ))}
     </div>
   );

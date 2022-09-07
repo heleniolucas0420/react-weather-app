@@ -5,6 +5,8 @@ import { ForecastContext } from '../../contexts/forecast.context';
 import DailyForecast from '../daily-forecast/daily-forecast.component';
 import HightlightCard from '../hightlight-card/hightlight-card.component';
 import UnitsButton from '../units-button/units-button.component';
+import ProgressBar from '../progress-bar/progress-bar.component';
+import WindDirection from '../wind-direction/wind-direction.component';
 
 import './detail-panel.styles.scss';
 
@@ -40,12 +42,16 @@ const DetailPanel = () => {
             title='Wind Status'
             hightlight={Math.floor(forecast.current.wind_speed * 3.6)}
             hightlight_unit={units.wind_status}
-          />
+          >
+          <WindDirection />
+          </HightlightCard>
           <HightlightCard 
             title='Humidity'
             hightlight={forecast.current.humidity}
             hightlight_unit='%'
-          />
+          >
+            <ProgressBar percentage={forecast.current.humidity} />
+          </HightlightCard>
           <HightlightCard 
             title='Visibility'
             hightlight={forecast.current.visibility / 1000}
