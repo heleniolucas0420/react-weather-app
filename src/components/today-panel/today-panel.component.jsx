@@ -72,7 +72,7 @@ const TodayPanel = ({ location_name, setLocationName }) => {
               className='get-current-location'
               onClick={handleGetCurrentPosition}
             >
-              <span class='material-symbols-outlined'>my_location</span>
+              <span className='material-symbols-outlined'>my_location</span>
             </button>
           </div>
           <img
@@ -93,7 +93,7 @@ const TodayPanel = ({ location_name, setLocationName }) => {
             {`${current_date.day}, ${current_date.date} ${current_date.month}`}
           </span>
           <div className='current-location'>
-            <span class='material-symbols-outlined location-icon'>
+            <span className='material-symbols-outlined location-icon'>
               location_on
             </span>
             {location_name}

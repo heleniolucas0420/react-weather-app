@@ -11,7 +11,7 @@ const HightlightCard = ({ title, hightlight, hightlight_unit, children }) => {
         <span className='hightlight-unit'>{hightlight_unit}</span>
       </div>
       {
-        children && <Fragment>{children}</Fragment>
+        children && <div className='hightlight-children'>{children}</div>
       }
     </div>
   );
